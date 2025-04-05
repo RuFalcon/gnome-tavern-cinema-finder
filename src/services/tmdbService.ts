@@ -112,15 +112,21 @@ export const discoverMovies = async (
   }
 ): Promise<Movie[]> => {
   try {
-    const queryParams = new URLSearchParams({
+    // Convert all params to strings to fix the type error
+    const queryParams = Object.entries(params).reduce((acc, [key, value]) => {
+      acc[key] = String(value);
+      return acc;
+    }, {} as Record<string, string>);
+    
+    const searchParams = new URLSearchParams({
       api_key: API_KEY,
       language: "ru-RU",
       page: "1",
       include_adult: "false",
-      ...params,
+      ...queryParams
     });
     
-    const response = await fetch(`${BASE_URL}/discover/movie?${queryParams}`);
+    const response = await fetch(`${BASE_URL}/discover/movie?${searchParams}`);
     const data = await response.json();
     return data.results;
   } catch (error) {
