@@ -80,11 +80,10 @@ const MovieDetailsDialog: React.FC<MovieDetailsDialogProps> = ({ movie, isOpen, 
             {trailer && (
               <div className="mt-4">
                 <Button 
-                  variant="outline" 
-                  className="w-full tavern-button"
+                  className="w-full bg-tavern-gold hover:bg-tavern-accent text-tavern-dark font-bold py-3 px-4 rounded-md shadow-md transition-all flex items-center justify-center gap-2"
                   onClick={() => window.open(`https://www.youtube.com/watch?v=${trailer.key}`, '_blank')}
                 >
-                  <Film className="mr-2 h-4 w-4" />
+                  <Film className="h-5 w-5" />
                   Смотреть трейлер
                 </Button>
               </div>

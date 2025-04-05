@@ -115,6 +115,12 @@ const Index = () => {
     setUserResponses(prev => [...prev, message]);
   };
   
+  const handleNewSearch = () => {
+    setUserResponses([]);
+    setMovieResults([]);
+    setShowRecommendations(false);
+  };
+  
   return (
     <div className="min-h-screen bg-tavern-paper wooden-bg">
       <AudioControl />
@@ -140,6 +146,7 @@ const Index = () => {
             <MovieRecommendations 
               movies={movieResults} 
               introText={getRandomRecommendationPhrase()}
+              onNewSearch={handleNewSearch}
             />
           )}
         </div>

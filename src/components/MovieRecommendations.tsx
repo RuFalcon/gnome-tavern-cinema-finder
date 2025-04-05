@@ -5,13 +5,20 @@ import MovieCard from './MovieCard';
 import MovieDetailsDialog from './MovieDetailsDialog';
 import DwarfAvatar from './DwarfAvatar';
 import { audioService } from '../services/audioService';
+import { Button } from '@/components/ui/button';
+import { RefreshCw } from 'lucide-react';
 
 interface MovieRecommendationsProps {
   movies: Movie[];
   introText: string;
+  onNewSearch?: () => void;
 }
 
-const MovieRecommendations: React.FC<MovieRecommendationsProps> = ({ movies, introText }) => {
+const MovieRecommendations: React.FC<MovieRecommendationsProps> = ({ 
+  movies, 
+  introText,
+  onNewSearch 
+}) => {
   const [selectedMovie, setSelectedMovie] = useState<MovieDetails | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   
@@ -26,6 +33,11 @@ const MovieRecommendations: React.FC<MovieRecommendationsProps> = ({ movies, int
     } catch (error) {
       console.error('Error fetching movie details:', error);
     }
+  };
+  
+  const handleNewSearch = () => {
+    audioService.playUISound('click');
+    if (onNewSearch) onNewSearch();
   };
   
   return (
@@ -45,6 +57,16 @@ const MovieRecommendations: React.FC<MovieRecommendationsProps> = ({ movies, int
             onClick={handleMovieClick}
           />
         ))}
+      </div>
+      
+      <div className="mt-8 flex justify-center">
+        <Button 
+          onClick={handleNewSearch}
+          className="tavern-button flex items-center gap-2 text-lg py-3 px-6"
+        >
+          <RefreshCw className="w-5 h-5" />
+          Начать новый поиск
+        </Button>
       </div>
       
       <MovieDetailsDialog
