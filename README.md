@@ -37,9 +37,3 @@ npm run dev
 - React
 - shadcn-ui
 - Tailwind CSS
-
-Да, это возможно!
-
-Для подключения домена перейдите в Проект > Настройки > Домены и нажмите "Подключить домен".
-
-Узнайте больше здесь: [Настройка собственного домена](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
