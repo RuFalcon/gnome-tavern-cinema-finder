@@ -9,15 +9,36 @@ import { Film } from 'lucide-react';
 interface ChatInterfaceProps {
   onSendMessage: (message: string) => void;
   isLoading?: boolean;
+  resetChat?: boolean;
+  onChatReset?: () => void;
 }
 
-const ChatInterface: React.FC<ChatInterfaceProps> = ({ onSendMessage, isLoading = false }) => {
+const ChatInterface: React.FC<ChatInterfaceProps> = ({ 
+  onSendMessage, 
+  isLoading = false, 
+  resetChat = false,
+  onChatReset
+}) => {
   const [messages, setMessages] = useState<ChatMessageProps[]>([
     { sender: 'dwarf', text: getRandomGreeting() }
   ]);
   const [inputValue, setInputValue] = useState('');
   const [questionIndex, setQuestionIndex] = useState(0);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  
+  // Effect to reset chat when resetChat prop changes
+  useEffect(() => {
+    if (resetChat) {
+      setMessages([{ sender: 'dwarf', text: getRandomGreeting() }]);
+      setQuestionIndex(0);
+      audioService.playUISound('message');
+      
+      // Notify parent that chat was reset
+      if (onChatReset) {
+        onChatReset();
+      }
+    }
+  }, [resetChat, onChatReset]);
   
   // Scroll to bottom when messages change
   useEffect(() => {

@@ -12,6 +12,7 @@ const Index = () => {
   const [movieResults, setMovieResults] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(false);
   const [showRecommendations, setShowRecommendations] = useState(false);
+  const [resetChatTrigger, setResetChatTrigger] = useState(false);
   
   // Process user responses and generate recommendations after a few messages
   useEffect(() => {
@@ -119,6 +120,12 @@ const Index = () => {
     setUserResponses([]);
     setMovieResults([]);
     setShowRecommendations(false);
+    setResetChatTrigger(true);
+  };
+  
+  const handleChatReset = () => {
+    // Reset the trigger after chat has been reset
+    setResetChatTrigger(false);
   };
   
   return (
@@ -135,6 +142,8 @@ const Index = () => {
             <ChatInterface 
               onSendMessage={handleSendMessage} 
               isLoading={loading}
+              resetChat={resetChatTrigger}
+              onChatReset={handleChatReset}
             />
           </div>
           
