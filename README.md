@@ -1,58 +1,60 @@
-# Welcome to your Lovable project
 
-## Project info
+# Добро пожаловать в ваш Lovable проект
+
+## Информация о проекте
 
 **URL**: https://lovable.dev/projects/a531d7f1-113f-486b-bac6-dceca35f8304
+**Рабочее приложение**: https://gnome-tavern-cinema-finder.lovable.app/
 
-## How can I edit this code?
+## Как я могу редактировать этот код?
 
-There are several ways of editing your application.
+Существует несколько способов редактирования вашего приложения.
 
-**Use Lovable**
+**Использовать Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a531d7f1-113f-486b-bac6-dceca35f8304) and start prompting.
+Просто посетите [Lovable Project](https://lovable.dev/projects/a531d7f1-113f-486b-bac6-dceca35f8304) и начните работу с помощью запросов.
 
-Changes made via Lovable will be committed automatically to this repo.
+Изменения, внесенные через Lovable, будут автоматически зафиксированы в этом репозитории.
 
-**Use your preferred IDE**
+**Использовать вашу предпочтительную IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Если вы хотите работать локально, используя собственную IDE, вы можете клонировать этот репозиторий и отправлять изменения. Отправленные изменения также будут отражены в Lovable.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Единственным требованием является наличие установленных Node.js и npm - [установите с помощью nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-Follow these steps:
+Следуйте этим шагам:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Шаг 1: Клонируйте репозиторий, используя Git URL вашего проекта.
+git clone <ВАШ_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Шаг 2: Перейдите в директорию проекта.
+cd <НАЗВАНИЕ_ВАШЕГО_ПРОЕКТА>
 
-# Step 3: Install the necessary dependencies.
+# Шаг 3: Установите необходимые зависимости.
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Шаг 4: Запустите сервер разработки с автоматической перезагрузкой и мгновенным предпросмотром.
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+**Редактировать файл напрямую в GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- Перейдите к нужному файлу (файлам).
+- Нажмите на кнопку "Edit" (значок карандаша) в правом верхнем углу просмотра файла.
+- Внесите изменения и зафиксируйте их.
 
-**Use GitHub Codespaces**
+**Использовать GitHub Codespaces**
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- Перейдите на главную страницу вашего репозитория.
+- Нажмите на кнопку "Code" (зеленая кнопка) в правом верхнем углу.
+- Выберите вкладку "Codespaces".
+- Нажмите "New codespace", чтобы запустить новую среду Codespace.
+- Редактируйте файлы непосредственно в Codespace, а затем фиксируйте и отправляйте изменения.
 
-## What technologies are used for this project?
+## Какие технологии используются в этом проекте?
 
-This project is built with:
+Этот проект построен с использованием:
 
 - Vite
 - TypeScript
@@ -60,14 +62,14 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+## Как я могу развернуть этот проект?
 
-Simply open [Lovable](https://lovable.dev/projects/a531d7f1-113f-486b-bac6-dceca35f8304) and click on Share -> Publish.
+Просто откройте [Lovable](https://lovable.dev/projects/a531d7f1-113f-486b-bac6-dceca35f8304) и нажмите на Поделиться -> Опубликовать.
 
-## Can I connect a custom domain to my Lovable project?
+## Могу ли я подключить собственный домен к моему проекту Lovable?
 
-Yes it is!
+Да, это возможно!
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Для подключения домена перейдите в Проект > Настройки > Домены и нажмите "Подключить домен".
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Узнайте больше здесь: [Настройка собственного домена](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
